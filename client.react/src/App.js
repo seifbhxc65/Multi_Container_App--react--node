@@ -8,7 +8,7 @@ import Fib from './fib';
 class App extends Component {
   render() {
     return (
-      <Routes>
+      <Router>
         <div className="App">
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
@@ -21,7 +21,7 @@ class App extends Component {
             <Route path="/otherpage" component={OtherPage} />
           </div>
         </div>
-      </Routes>
+      </Router>
     );
   }
 }
