@@ -1,4 +1,4 @@
-const keys = require('./keys');
+const keys = require('./key');
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
