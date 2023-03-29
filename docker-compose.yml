@@ -3,7 +3,7 @@ services:
     postgres:
         image: postgres:latest 
     redis:
-        image: resis:latest 
+        image: redis:latest 
     server:
         build:
           dockerfile: Dockerfile.dev
