@@ -1,9 +1,9 @@
 version: '3'
 services:
     postgres:
-        image:'postgres:latest'
+        image: postgres:latest 
     redis:
-        image:   
+        image: resis:latest 
     server:
         build:
           dockerfile: Dockerfile.dev
