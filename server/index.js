@@ -46,6 +46,8 @@ app.get('/values/current', async (req, res) => {
 app.post('/values', async (req, res) => {
     const index = req.body.index;
     if (parseInt(index) > 40) {
+        const values = await pgClient.query('SELECT * from values;');
+    console.log(values.rows);
         return res.status(422).send('Index too high');
     }
     redisClient.hset('values', index, 'Nothing yet!');
