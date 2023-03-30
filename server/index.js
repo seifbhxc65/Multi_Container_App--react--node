@@ -52,6 +52,6 @@ app.post('/values', async (req, res) => {
     pgClient.query('INSERT INTO values(number) VALUES($1);', [index]);
     res.send({ working: true });
 });
-app.listen(3000,()=>{
+app.listen(5000,()=>{
     console.log("Listening")
 })
