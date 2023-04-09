@@ -1,0 +1,17 @@
+sudo: required
+services:
+   - docker
+before_install:
+   - docker build -t seifbelhaj/react-test -f ./client/Dockerfile ./client
+script:
+   - docker run seifbelhaj/react-test npm test -- --coverage --watchAll=false
+after_success:
+   - docker builld -t seifbelhaj/multi-client ./client
+   - docker builld -t seifbelhaj/multi-nginx ./nginx
+   - docker builld -t seifbelhaj/multi-server ./server
+   - docker builld -t seifbelhaj/multi-worker ./worker
+   - echo "$DOCKER_PSSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+   - docker push seifbelhaj/multi-client
+   - docker push seifbelhaj/multi-nginx
+   - docker push seifbelhaj/multi-server
+   - docker push seifbelhaj/multi-worker
