@@ -4,7 +4,7 @@ services:
 before_install:
    - docker build -t seifbelhaj/react-test -f ./client/Dockerfile ./client
 script:
-   - docker run seifbelhaj/react-test npm test -- --coverage --watchAll=false
+   - docker run seifbelhaj/react-test npm run test -- --coverage --watchAll=false
 after_success:
    - docker builld -t seifbelhaj/multi-client ./client
    - docker builld -t seifbelhaj/multi-nginx ./nginx
