@@ -10,7 +10,7 @@ after_success:
    - docker builld -t seifbelhaj/multi-nginx ./nginx
    - docker builld -t seifbelhaj/multi-server ./server
    - docker builld -t seifbelhaj/multi-worker ./worker
-   - echo "$DOCKER_PSSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
    - docker push seifbelhaj/multi-client
    - docker push seifbelhaj/multi-nginx
    - docker push seifbelhaj/multi-server
