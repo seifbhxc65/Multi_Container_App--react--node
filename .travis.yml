@@ -12,6 +12,7 @@ after_success:
    - docker builld -t seifbelhaj/multi-worker ./worker
    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
    - docker push seifbelhaj/multi-client
+   - docker push nginx
    - docker push seifbelhaj/multi-nginx
    - docker push seifbelhaj/multi-server
    - docker push seifbelhaj/multi-worker
